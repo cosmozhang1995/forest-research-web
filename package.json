@@ -1,0 +1,28 @@
+{
+  "name": "forest-web",
+  "description": "Web app for forest-research",
+  "version": "0.0.1",
+  "author": {
+    "name": "Cosmo Zhang",
+    "email": "cosmozhang1995@gmail.com"
+  },
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosmozhang1995/forest-research-web.git"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "forest-research": "*"
+  }
+}
