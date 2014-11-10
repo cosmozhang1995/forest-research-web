@@ -1,11 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<form id="form" action="/result" method="post" role="form" enctype="multipart/form-data">
+	<div class="form-group">
+		<!-- <label>上传你的表格，一定要是 .xlsx 格式的哦</label> -->
+		<input type="file" id="file" name="file" style="display:none;" />
+		<input type="text" id="category" name="category" style="display:none;" />
+		<!-- <div id="file-dropbox" class="file-dropbox">
+			<div class="file-dropbox-content">上传你的表格，一定要是 .xlsx 格式的哦</div>
+		</div> -->
+		<div class="form-group">
+			<div class="btn-group">
+				<button type="button" class="btn btn-file-choose btn-success">上传你的表格，一定要是 .xlsx 格式的哦</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="btn-group">
+				<button type="button" class="btn btn-category-select btn-default" data-value="tree">乔木</button>
+				<button type="button" class="btn btn-category-select btn-default" data-value="shrub">灌木</button>
+				<button type="button" class="btn btn-category-select btn-default" data-value="herb">草本</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="btn-group">
+				<button type="submit" class="btn btn-primary">开始分析</button>
+			</div>
+		</div>
+	</div>
+</form>
+<script type="text/javascript" src="/javascripts/pages/page-index.js"></script>

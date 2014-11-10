@@ -26,3 +26,13 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Bower
+bower_components
+public/vendor
+
+# Sass
+.sass-cache
+
+# Server Outputs
+public/output/*
