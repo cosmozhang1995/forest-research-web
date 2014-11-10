@@ -18,8 +18,12 @@ router.get('/', function(req, res) {
 // });
 
 router.post('/generate', function(req, res) {
+	console.log('generate');
 	var data = JSON.parse(req.body['data']);
-	var file_abs_path = '/public/output/' + uuid.v1() + '.xlsx';
+	var dir_abs_path = '/public/output';
+	var dir_path = __dirname + '/..' + dir_abs_path;
+	if (!(fs.existsSync(dir_path) && fs.statSync(dir_path).isDirectory())) fs.mkdirSync(dir_path);
+	var file_abs_path = dir_abs_path + '/' + uuid.v1() + '.xlsx';
 	var filepath = __dirname + '/..' + file_abs_path;
 	forest.putFileSync(filepath, data);
 	var real_path = fs.realpathSync(filepath);
