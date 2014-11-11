@@ -22,3 +22,17 @@ a {
 		}
 	}
 }
+
+.btn-check {
+	color: #000;
+	.btn-check-hint {
+		color: #f99;
+	}
+}
+
+.btn-check.btn-danger {
+	color: #fff;
+	.btn-check-hint {
+		color: #f99;
+	}
+}

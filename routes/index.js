@@ -16,6 +16,8 @@ router.post('/result', multipartMiddleware, function(req, res) {
 	// console.log('Received file:\n',req.files);
 	var file = req.files.file;
 	var category = req.body.category;
+	var singleFeature = false;
+	if ((req.body.single_feature === true) || (req.body.single_feature === "true")) singleFeature = true;
 	// console.log(category);
 	// var targetName = __dirname + '/../upload/' + file.originalFilename;
 	// fs.renameSync(file.path, targetName);
@@ -25,7 +27,8 @@ router.post('/result', multipartMiddleware, function(req, res) {
 	var stringifiedData = null;
 	try {
 		forest = Forest.loadFile(file.path, {
-			category: category
+			category: category,
+			singleFeature: singleFeature
 		});
 		forest.forEach(function(item) {
 			tableData.push({

@@ -43,6 +43,37 @@ $(document).ready(function() {
 	});
 
 	$($('.btn-category-select').get(0)).click();
+
+	$('.btn-check').click(function(event) {
+		var inputEl = $(this).data('field');
+		if (typeof inputEl === "string") inputEl = $('input[name=' + inputEl + ']');
+		else return;
+		var texts = $(this).data('text');
+		if (typeof texts === "string") texts = texts.split('|');
+		else return;
+		var curr_val = inputEl.attr('value') || inputEl.val();
+		if ((curr_val === true) || (curr_val === "true")) {
+			console.log('true');
+			inputEl.val(false).attr('value', false);
+			$(this).removeClass('btn-danger');
+			$(this).html(texts[1] + '<span class="btn-check-hint">（点击后 ' + texts[0] + '）</span>');
+		} else {
+			console.log('false');
+			inputEl.val(true).attr('value', true);
+			$(this).addClass('btn-danger');
+			$(this).html(texts[0] + '<span class="btn-check-hint">（点击后 ' + texts[1] + '）</span>');
+		}
+	});
+
+	$('.btn-check').each(function(index, el) {
+		var texts = $(this).data('text');
+		if (typeof texts === "string") texts = texts.split('|');
+		var inputEl = $(this).data('field');
+		if (typeof inputEl === "string") inputEl = $('input[name=' + inputEl + ']');
+		var curr_val = inputEl.attr('value') || inputEl.val();
+		if ((curr_val === true) || (curr_val === "true")) $(this).html(texts[0] + '<span class="btn-check-hint">（点击后 ' + texts[1] + '）</span>');
+		else $(this).html(texts[1] + '<span class="btn-check-hint">（点击后 ' + texts[0] + '）</span>');
+	});
 });
 
 function handleFiles(files) {

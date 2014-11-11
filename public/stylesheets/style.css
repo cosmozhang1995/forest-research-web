@@ -15,3 +15,17 @@ a {
 .nav li a:hover i.fa:hover, .nav li a:link i.fa:hover, .nav li a:active i.fa:hover, .nav li a:visited i.fa:hover, .nav li a i.fa:hover {
   color: #f66;
 }
+
+.btn-check {
+  color: #000;
+}
+.btn-check .btn-check-hint {
+  color: #f99;
+}
+
+.btn-check.btn-danger {
+  color: #fff;
+}
+.btn-check.btn-danger .btn-check-hint {
+  color: #f99;
+}
